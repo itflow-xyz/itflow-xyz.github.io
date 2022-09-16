@@ -167,6 +167,7 @@ article{
 
 
 
+
 @media screen and (max-width: 768px){
     article{
         display: flex;
@@ -191,27 +192,34 @@ article{
 
 /* scroll name */
 .scroll_name{
+    width: 100%;
+    padding: 25px;
     border: 1px solid red;
     display: flex;
-    padding: 25px;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
 }
 
-.scroll_name p{
+.scroll_name ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+.scroll_name ul li{
     margin: 10px;
     color:rgba(172,169,202,255) ;
-    animation: scroll 15s linear infinite;
+    animation: scroll 10s linear infinite;
+    padding-left: 50%;
 }
 
 @keyframes scroll{
-    0%{
-        transform: translateX(100%);
-    }
-
     100%{
-        transform: translateX(-100%);
+        transform: translate(-100%, 0);
 
     }
-
 }
 
 
