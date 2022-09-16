@@ -320,8 +320,8 @@ article{
 }
 
 @media screen and (max-width: 768px){
-    .scroll_name ul li{
-        padding: 8%;
+    .scroll_name ul a{
+        padding: 5%;
     }
 }
 
@@ -501,6 +501,6 @@ footer{
 
     .container_details_text p{
         width: 100%;
-        padding: 20px;
+        padding: 25px;
     }
 }
