@@ -19,7 +19,13 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    border: 1px solid red;
+    position: sticky;
+    top: 0;
+}
+
+.active_color{
+    background-color: rgba(158, 167, 187, 0.36);
+    transition: 1.5s;
 }
 
 header img{
