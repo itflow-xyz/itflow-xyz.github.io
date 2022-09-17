@@ -25,7 +25,7 @@ header{
 
 .active_color{
     background-color: rgba(158, 167, 187, 0.36);
-    transition: 1.5s;
+    transition: 1.5s ease;
 }
 
 header img{
@@ -85,7 +85,40 @@ width: 100%;
 section img{
     height: 250px;
     width: 250px;
+    animation: blobs 8s ease-in-out infinite;
 }
+
+
+
+
+@keyframes blobs{
+0%{
+    border-radius: 57% 43% 70% 30% / 44% 73% 27% 56% ;
+}
+
+25%{
+    border-radius: 68% 32% 63% 37% / 26% 51% 49% 74% ;
+
+}
+
+50%{
+    border-radius: 50% 50% 33% 67% / 43% 54% 46% 57% ;
+
+}
+
+75%{
+    border-radius: 68% 32% 63% 37% / 26% 51% 49% 74% ;
+
+}
+
+100%{
+    border-radius: 57% 43% 70% 30% / 44% 73% 27% 56%;
+
+}
+}
+
+
+
 
 .section_info_title{
     position: absolute;
@@ -237,7 +270,7 @@ article{
 }
 
 .popup.active{
-    animation: animatedPopup 250ms ease-in-out forwards;
+    animation: animatedPopup 250ms ease-in-out infinite;
 }
 
 .popup.active .content{
