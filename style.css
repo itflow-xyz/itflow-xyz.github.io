@@ -181,6 +181,25 @@ article{
     margin: auto; 
 }
 
+.circle:hover{
+    animation: bounce 1.5s ease-in-out;
+}
+
+@keyframes bounce{
+    0%,
+    20%,
+    60%,
+    100%{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-30px);
+    }
+    80%{
+        transform: translateY(-20px);
+    }
+}
+
 
 .circle_text{
     height: auto;
