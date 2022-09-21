@@ -334,50 +334,57 @@ article{
 
 
 /* scroll name */
-.scroll_name{
-    width: 100%;
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.slider{
+    margin: auto;
     overflow: hidden;
+    position: relative;
+    width: auto;
+    margin-top: 100px;
+    padding-bottom: 30px;
+
 }
 
-.scroll_name ul{
+.slide_track ul{
     display: flex;
-    justify-content: space-around;
+    animation: scroll 40s linear infinite;
+    width: calc(250px * 14);
     list-style: none;
 
 }
 
-.scroll_name ul a{
+ .slide_track ul li{
+    height: 100px;
+    width: 240px;
     text-decoration: none;
-    padding: 15%;
-    animation: scroll 10s linear infinite;
-    margin: 10px;
-
+    color: #aaa;
 
 }
 
-.scroll_name ul li{
-    color:rgba(172,169,202,255) ;
+.slide_track ul a{
+    text-decoration: none;
 }
 
 @keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+
     100%{
-        transform: translate(-100%, 0);
+        transform: translateX(calc(-250px * 7));
     }
 }
 
 @media screen and (max-width: 768px){
-    .scroll_name ul a{
-        padding: 5%;
+    .slide_track ul li{
+        height: 50px;
+        width: 150px;
     }
 }
 
 /* container partners */
 
 .container_partners{
+    margin-top: 80px;
     width: 100%;
     display: flex;
     justify-content: space-between;
