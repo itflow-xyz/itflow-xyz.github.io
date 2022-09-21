@@ -172,34 +172,38 @@ article{
 
 
 .circle{
-    width: 85px;
+   width: 85px;
     height: 85px;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
-    background-color: rgba(255,208,52,255);
     margin: auto; 
+    box-sizing: border-box;
+    background-color: rgba(255,208,52,255);
 }
 
-.circle:hover{
-    animation: bounce 1.5s ease-in-out;
+
+
+.circle:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    box-sizing: border-box;
+    animation: circle 2s linear infinite;
+    border-radius: 50%;
 }
 
-@keyframes bounce{
-    0%,
-    20%,
-    60%,
+@keyframes circle{
     100%{
-        transform: translateY(0);
-    }
-    40%{
-        transform: translateY(-30px);
-    }
-    80%{
-        transform: translateY(-20px);
+        width: 150%;
+        height: 150%;
+        border: 1px solid rgba(255,208,52,255);
     }
 }
-
 
 .circle_text{
     height: auto;
@@ -223,6 +227,7 @@ article{
     background: rgba(255,208,52,255);
     overflow: hidden;
     z-index: 1;
+
 }
 
 .content{
@@ -265,10 +270,6 @@ article{
 .popup .content .popup_close_btn{
     position: absolute;
     top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
     line-height: 35px;
     color: #111;
     font-size: 30px;
@@ -291,13 +292,11 @@ article{
 
 @keyframes animatedPopup{
     0%{
-        border-radius: 0%;
+        border-radius: 100%;
     }
-
     50%{
-        border-radius: 50%;
+        border-radius: 100%;
     }
-
     100%{
         width: 100%;
         height: 100%;
