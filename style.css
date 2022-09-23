@@ -167,7 +167,7 @@ article{
 
 
 .circle{
-   width: 85px;
+    width: 85px;
     height: 85px;
     border-radius: 50%;
     position: relative;
@@ -175,8 +175,14 @@ article{
     margin: auto; 
     box-sizing: border-box;
     background-color: rgba(255,208,52,255);
-}
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(51,42,124,255);
+    font-weight: 600;
+}
 
 
 .circle:after{
@@ -212,23 +218,14 @@ article{
 
 
 /* popup */
-
-.popup{
+.popup_content{
     position: fixed;
-    top: 50%;
+    z-index: -1;
+    top: 0;
     left: 0;
+    height: 100%;
     width: 100%;
-    height: 0%;
-    transform: translateY(-50%);
-    background: rgba(255,208,52,255);
-    overflow: hidden;
-    z-index: 1;
-
-}
-
-.content{
     padding: 30px 20px;
-    width: 100%;
     margin: 0 auto;
     opacity: 0;
     display: flex; 
@@ -247,7 +244,7 @@ article{
 }
 
 @media screen and (max-width: 768px){
-    .content{
+    .popup_content{
         display: flex;
         flex-direction: column;
     }
@@ -263,7 +260,7 @@ article{
     }
 }
 
-.popup .content .popup_close_btn{
+.popup_content .popup_close_btn{
     color: #111;
     font-size: 40px;
     cursor: pointer;
@@ -274,14 +271,25 @@ article{
 }
 
 
-
-.popup.active{
-    animation: animatedPopup 250ms ease-in-out forwards;
+.circle.active{
+    animation: animatedCircle 500ms ease-in-out forwards;
+}
+.circle.deactive{
+    animation: animatedCircleReverse 500ms ease-in-out forwards;
 }
 
-.popup.active .content{
-    opacity: 1;
-    transition: all 200ms ease-in-out 250ms;
+.circle p.active{
+    animation: textAnimation 200ms ease-in-out forwards;
+}
+.circle p.deactive{
+    animation: textAnimationReverse 200ms ease-in-out forwards 300ms;
+}
+
+.popup_content.active{
+    animation: textAnimation2 200ms ease-in-out forwards 300ms;
+}
+.popup_content.deactive{
+    animation: textAnimation2Reverse 200ms ease-in-out forwards;
 }
 
 @media screen and (max-width: 768px){
@@ -293,19 +301,67 @@ article{
     }
 }
 
-@keyframes animatedPopup{
+@keyframes textAnimation {
     0%{
-        border-radius: 100%;
-    }
-    50%{
-        border-radius: 100%;
+        opacity: 1;
     }
     100%{
-        width: 100%;
-        height: 100%;
+        opacity: 0;
+    }
+    
+}
+@keyframes textAnimationReverse {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
 
+@keyframes textAnimation2 {
+    0%{
+        z-index: -1;
+        opacity: 0;
+    }
+    1% {
+        z-index: 1;
+    }
+    100%{
+        z-index: 1;
+        opacity: 1;
+    }
+}
+@keyframes textAnimation2Reverse {
+    0%{
+        z-index: 1;
+        opacity: 1;
+    }
+    99% {
+        z-index: -1;
+    }
+    100%{
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+@keyframes animatedCircle{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(30);
+    }
+}
+@keyframes animatedCircleReverse{
+    0%{
+        transform: scale(30);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 
 /* scroll name */
 .slider{
@@ -455,33 +511,70 @@ margin: 20px;
 }
 
 
-
 /* footer */
 
 footer{
-    width: 100%;
     padding: 30px;
-    display: flex;
-    justify-content: space-around;
+    width: 100%;
     color: rgba(51,42,124,255);
-    font-weight: 600;
     background-color: rgba(166,162,198,255);
 }
 
-.footer_contacts p{
-    margin: 20px;
+
+.footer_logo img{
+    height: 75px;
 }
 
-.footer_social p{
-    margin: 20px;
+.container_footer_info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+}
+
+.container_footer_info_text{
+    padding: 25px;
+    color: rgba(51,42,124,255);
+    font-weight: 600;
+    width: 100%;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.container_footer_info_contact ul{
+    display: flex;
+    list-style: none;
     cursor: pointer;
+    color: #fff;
 }
 
+.container_footer_info_contact ul li{
+    margin-left: 20px;
+}
+
+.footer_mobile{
+    display: none;
+}
 @media screen and (max-width: 768px){
-    footer{
-        display: flex;
-        flex-direction: column;
+    .footer_logo{
+        display: none;
     }
+    .container_footer_info{
+        display: none;
+    }
+
+    .footer_mobile{
+        display: flex;
+        justify-content: space-around;
+        color: #fff;
+        border: 1px solid red;
+        padding: 30px;
+    }
+
+    
 }
 
 /* DETAILS PAGE */
