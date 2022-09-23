@@ -11,6 +11,10 @@ html{
     scroll-behavior: smooth;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* header + navbar */
 
 header{
@@ -534,25 +538,25 @@ footer{
 }
 
 .container_footer_info_text{
-    padding: 25px;
+    padding: 40px;
     color: rgba(51,42,124,255);
     font-weight: 600;
     width: 100%;
 }
 
-body.no-scroll {
-    overflow: hidden;
-}
 
 .container_footer_info_contact ul{
     display: flex;
     list-style: none;
     cursor: pointer;
     color: #fff;
+    transform: translate(-30px);
+
 }
 
 .container_footer_info_contact ul li{
     margin-left: 20px;
+    font-size: 25px;
 }
 
 .footer_mobile{
@@ -570,8 +574,20 @@ body.no-scroll {
         display: flex;
         justify-content: space-around;
         color: #fff;
-        border: 1px solid red;
-        padding: 30px;
+        padding: 25px;
+        cursor: pointer;
+    }
+
+    .footer_mobile ul{
+        list-style: none;
+    }
+
+    .footer_mobile_one ul li{
+        margin: 10px;
+    }
+
+    .footer_mobile_two ul li{
+        margin: 10px;
     }
 
     
