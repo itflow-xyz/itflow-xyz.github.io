@@ -513,11 +513,12 @@ article{
     padding: 50px;
     display: flex;
     justify-content: center;
-    margin-top: 100px ;
+    margin-top: 100px;
+
 }
 
 .container_info_text{
-
+    width: 50%;
 }
 
 .container_info_text p{
@@ -534,8 +535,8 @@ article{
 
 
 .container_info_info img{
-    height: 110x;
-    width: 110px;
+    height: 150x;
+    width: 150px;
     cursor: pointer;
     margin: 30px;
 
