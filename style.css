@@ -35,6 +35,8 @@ header img{
     height: 75px;
 }
 
+
+
 nav ul{
     list-style: none;
     display: flex;
@@ -64,6 +66,10 @@ nav ul li a{
     nav ul li{
         margin: 20px;
         font-size: 20px;
+    }
+
+    .header_mobile{
+        height: 40px;
     }
 }
 

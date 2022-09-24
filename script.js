@@ -8,6 +8,8 @@ document.querySelector(".circle").addEventListener("click", () => {
   document.querySelector(".popup_content").classList.add("active");
   document.querySelector("body").classList.add("no-scroll");
 });
+
+// close popup
 document
   .querySelector(".popup_content .popup_close_btn")
   .addEventListener("click", () => {
@@ -19,3 +21,14 @@ document
     document.querySelector(".popup_content").classList.add("deactive");
     document.querySelector("body").classList.remove("no-scroll");
   });
+
+// header mobile
+const header = document.querySelector("header img");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 50) {
+    header.classList.add("header_mobile");
+  } else {
+    header.classList.remove("header_mobile");
+  }
+});
