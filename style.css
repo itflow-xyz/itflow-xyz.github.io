@@ -362,8 +362,13 @@ article{
     0%{
         transform: scale(1);
     }
+    50%{
+        transform: scale(30);
+    }
     100%{
         transform: scale(30);
+        position: fixed;
+
     }
 }
 @keyframes animatedCircleReverse{
