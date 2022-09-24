@@ -108,10 +108,10 @@ section img{
     }
     
     .section_info_title{
-        width: 100%;
-        line-height: 1.5;
-        padding: 20px;
-        position: relative;
+        width: 110%;
+        line-height: 1;
+        padding: 15px;
+        position: relative;        
     }
 
     .section_info_title h1{
@@ -143,8 +143,7 @@ article{
 
 
 .article_image img{
-    height: 380px;
-    
+    height: 380px;    
 }
 
 .article_image{
@@ -157,16 +156,19 @@ article{
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
+        padding: 20px;
+    }
 
+    
+
+    .article_text{
+        width: 100%;
+        margin: 30px;
+        font-size: 27px;
     }
 
     .article_text p{
         margin-top: 0;
-    }
-
-    .article_mobile{
-        display: flex;
-        flex-direction: column;
     }
 
     .container_circle{
@@ -256,6 +258,10 @@ article{
 }
 
 @media screen and (max-width: 768px){
+    .container_circle{
+        margin-top: 0;
+        padding: 100px;
+    }
     .popup_content{
         display: flex;
         flex-direction: column;
@@ -264,11 +270,10 @@ article{
     .content_info{
         padding: 5px;
         margin: 0px auto;
-       
     }
 
        .content_info p{
-        padding-top: 10px;   
+        padding-top: 2px;   
     }
 }
 
@@ -468,6 +473,7 @@ article{
  height: 70px;
  cursor: pointer;
  margin: 20px;
+ z-index: -1;
 
 }
 
@@ -488,14 +494,18 @@ article{
     .container_partners{
         display: flex;
         flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
         align-items: center;
+        padding: 20px;
     }
     .container_partners_text{
         width: 100%;
         transform: translate(0);
     }
     .container_partners_text p{
-        font-size: 25px;
+        font-size: 27px;
+        text-align: start;
     }
     .container_partners_text img{
         height: 50px;
@@ -547,6 +557,10 @@ article{
 
 }
 
+.container_info_info_mobile{
+    display: none;
+}
+
 @media screen and (max-width: 768px){
     #img_linkedin{
         display: none;
@@ -555,10 +569,50 @@ article{
     .container_info{
         display: flex;
         flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .container_info_text{
+        width: 100%;
     }
 
     .container_info_text p{
-        font-size: 25px;
+        font-size: 27px;
+    }
+
+    .container_info_info1{
+        display: none;
+    }
+
+    .container_info_info2{
+        display: none;
+    }
+
+    .container_info_info_mobile{
+        display: block;
+        justify-content: space-evenly;
+        width: 90%;
+    }
+
+    .container_info_info_social{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container_info_info_social img{
+        width: 130px;
+        height: 130px;
+    }
+
+    .container_info_info_telephone{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container_info_info_telephone img{
+        width: 130px;
+        height: 130px;
+
     }
 }
 
@@ -589,7 +643,8 @@ footer{
     padding: 40px;
     color: rgba(51,42,124,255);
     font-weight: 600;
-    width: 100%;
+    width: 70%;
+    font-size: 25px;
 }
 
 
