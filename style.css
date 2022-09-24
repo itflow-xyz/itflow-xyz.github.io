@@ -33,6 +33,7 @@ header{
 header img{
     cursor: pointer;
     height: 75px;
+    transition: 0.2s
 }
 
 
@@ -69,7 +70,7 @@ nav ul li a{
     }
 
     .header_mobile{
-        height: 50px;
+        height: 30px;
     }
 
     
