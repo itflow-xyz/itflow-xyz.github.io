@@ -23,9 +23,9 @@ document
   });
 
 // header mobile
-const header = document.querySelector("header img");
 
 window.addEventListener("scroll", () => {
+  const header = document.querySelector("header img");
   if (window.scrollY >= 50) {
     header.classList.add("header_mobile");
   } else {
