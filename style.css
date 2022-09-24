@@ -15,6 +15,8 @@ body.no-scroll {
     overflow: hidden;
 }
 
+
+
 /* HEADER + NAVBAR */
 
 header{
@@ -121,6 +123,7 @@ section img{
 
 }
 
+
 /* ARTICLE */
 article{
     width: 100%;
@@ -173,6 +176,13 @@ article{
 
     .container_circle{
         padding: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1180px){
+    #article1 p{
+        margin-top: 150px;
+        
     }
 }
 
@@ -270,10 +280,11 @@ article{
     .content_info{
         padding: 5px;
         margin: 0px auto;
+       
     }
 
        .content_info p{
-        padding-top: 2px;   
+        padding-top: 10px;   
     }
 }
 
@@ -457,7 +468,10 @@ article{
     display: flex;
     flex-direction: column;
     width: 55%;
-    transform: translate(100px);
+}
+
+.container_partners_text_text{
+    margin: 0 100px;
 }
 
 
@@ -466,6 +480,7 @@ article{
     color: rgba(51,42,124,255);
     font-weight: 600;
     margin: 25px;
+    width: 100%;
 }
 
 .container_partners_text img{
@@ -501,7 +516,10 @@ article{
     }
     .container_partners_text{
         width: 100%;
-        transform: translate(0);
+    }
+
+    .container_partners_text_text{
+        margin: 0;
     }
     .container_partners_text p{
         font-size: 27px;
@@ -510,6 +528,7 @@ article{
     .container_partners_text img{
         height: 50px;
         width: 180px;
+        float: left;
     }
 
     .container_partners_image{
@@ -521,6 +540,22 @@ article{
         height: 350px;
     }
 }
+
+@media screen and (min-width:768px) and (max-width: 1180px){
+    .container_partners_text_text{
+        margin: 0;
+    }
+
+    .container_partners_image {
+        width: 50%;
+    }
+
+    .container_partners_image img{
+        float: right;
+    }
+}
+
+
 
 /* CONTAINER INFO */
 .container_info{
@@ -612,8 +647,51 @@ article{
     .container_info_info_telephone img{
         width: 130px;
         height: 130px;
-
     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1180px){
+    .container_info{
+        justify-content: center;
+    }
+
+    .container_info_info1{
+        display: none;
+    }
+
+    .container_info_info2{
+        display: none;
+    }
+
+    .container_info_info_mobile{
+        display: block;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .container_info_info_social{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container_info_info_social img{
+        width: 130px;
+        height: 130px;
+    }
+
+    .container_info_info_telephone{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container_info_info_telephone img{
+        width: 130px;
+        height: 130px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+
 }
 
 
