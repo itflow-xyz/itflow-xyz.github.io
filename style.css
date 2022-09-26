@@ -250,7 +250,7 @@ article{
 }
 
 
-/* popup */
+/* POPUP */
 .popup_content{
     position: fixed;
     z-index: -1;
@@ -413,7 +413,7 @@ article{
     }
 }
 
-/* scroll name */
+/* SCROLL NAME */
 .slider{
     margin: auto;
     overflow: hidden;
@@ -462,7 +462,7 @@ article{
     }
 }
 
-/* container partners */
+/* CONTAINER PARTNERS */
 
 .container_partners{
     margin-top: 100px;
@@ -704,7 +704,7 @@ article{
 }
 
 
-/* footer */
+/* FOOTER */
 
 footer{
     padding: 30px;

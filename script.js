@@ -1,4 +1,4 @@
-//open popup
+//OPEN POPUP
 document.querySelector(".circle").addEventListener("click", () => {
   document.querySelector(".circle").classList.remove("deactive");
   document.querySelector(".circle p").classList.remove("deactive");
@@ -9,7 +9,7 @@ document.querySelector(".circle").addEventListener("click", () => {
   document.querySelector("body").classList.add("no-scroll");
 });
 
-// close popup
+// CLOSE POPUP
 document
   .querySelector(".popup_content .popup_close_btn")
   .addEventListener("click", () => {
@@ -22,7 +22,7 @@ document
     document.querySelector("body").classList.remove("no-scroll");
   });
 
-// header mobile
+// HEADER MOBILE
 
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header img");
