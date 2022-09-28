@@ -32,3 +32,27 @@ window.addEventListener("scroll", () => {
     header.classList.remove("header_mobile");
   }
 });
+
+const member = [
+  {
+    Name: "Giulio Bosco",
+    Img: "img/team-giuliobosco.JPG",
+    Position: "Technical Lead",
+    Scope: "I’m a curious person, always interested in learning and discovering. ",
+  },
+  {
+    Name: "Filippo Finke",
+    Img: "img/ITFLOW_LOGO.png",
+    Position: "Developer",
+    Scope: "Hello world",
+  }
+]
+
+const teamMember = (memberIndex) => {
+  window.document.querySelector("#team-image").setAttribute("src", member[memberIndex].Img);
+  window.document.querySelector("#team-title").setAttribute("style", "display: none;");
+  window.document.querySelector(".team-member").setAttribute("style", "display: block;");
+  window.document.querySelector("#team-member-name").textContent = member[memberIndex].Name;
+  window.document.querySelector("#team-member-position").textContent = member[memberIndex].Position;
+  window.document.querySelector("#team-member-scope").textContent = member[memberIndex].Scope;
+}
