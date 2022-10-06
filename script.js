@@ -1,3 +1,41 @@
+/*document.querySelector("nav img").addEventListener("click", () => {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+});*/
+Document.prototype.ready = function(callback) {
+  if(callback && typeof callback === 'function') {
+    document.addEventListener("DOMContentLoaded", function() {
+      if(document.readyState === "interactive" || document.readyState === "complete") {
+        return callback();
+      }
+    });
+  }
+};
+
+let scrolledOnce = false;
+document.ready(() => {
+  document.querySelector("nav img").addEventListener("click", () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  });
+
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector("nav");
+    if (window.scrollY >= 50) {
+      scrolledOnce = true;
+      header.classList.add("scrolled");
+      header.classList.remove("no-scrolled");
+    } else {
+      header.classList.remove("scrolled");
+      if (scrolledOnce) {
+        header.classList.add("no-scrolled");
+      }
+    }
+  });
+});
+
+
+/*
 //OPEN POPUP
 document.querySelector(".circle").addEventListener("click", () => {
   document.querySelector(".circle").classList.remove("deactive");
@@ -42,7 +80,7 @@ const member = [
   },
   {
     Name: "Filippo Finke",
-    Img: "img/ITFLOW_LOGO.png",
+    Img: "img/itflow-logo.png",
     Position: "Developer",
     Scope: "Hello world",
   }
@@ -55,4 +93,4 @@ const teamMember = (memberIndex) => {
   window.document.querySelector("#team-member-name").textContent = member[memberIndex].Name;
   window.document.querySelector("#team-member-position").textContent = member[memberIndex].Position;
   window.document.querySelector("#team-member-scope").textContent = member[memberIndex].Scope;
-}
+}*/
