@@ -195,6 +195,12 @@ nav ul li a:visited {
   width: 100%;
 }
 
+@media screen and (max-width: 650px) {
+  .container.t-container {
+    padding: 0 25px;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .container {
     padding: 0 25px;
@@ -208,20 +214,77 @@ nav ul li a:visited {
 }
 
 .home {
-/*    height: calc(100vh - (.17*(100vw - 75px) * .3711 + 100px));
-    */color: #332A7C;
+    color: #332A7C;
+  position: relative;
 }
 
 .home img {
     z-index: -1;
-    float: right;
-    width: 80%;
+  padding-top: 20vh;
+  right: 23%;
+    width: 50%;
     transform: translateY(-187px);
+  position: absolute;
 }
 
 .home h1 {
     padding-top: 15vh;
     float: left;
+  font-size: 3.5em;
+}
+
+@media screen and (max-width: 1650px) {
+  .home img {
+    right: 20%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .home h1 {
+    padding-top: 12vh;
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+.home h1 {
+  font-size: 2.7em;
+}
+  .home img {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home h1 {
+    padding-top: 10vh;
+  }
+
+  .home img {
+    right: 10%;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .home img {
+    right: 0;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home h1 {
+    padding-top: 6vh;
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .home h1 {
+    padding-top: 6vh;
+    font-size: 1.7em;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -234,6 +297,93 @@ nav ul li a:visited {
     padding-bottom: 20vh;
   }
 
+}
+
+.services {
+  position: relative;
+  margin-top: 20vh;
+  padding-top: 20vh;
+  color: #332A7C;
+}
+
+.services img {
+  float: right;
+  width: 30%;
+}
+
+.services h3 {
+  top: auto;
+  position: absolute;
+  bottom: 0;
+  max-width: 65%;
+  font-size: 2.40em;
+}
+
+@media screen and (max-width: 1400px) {
+  .services {
+    margin-top: 15vh;
+    padding-top: 15vh;
+  }
+  .services h3 {
+    font-size: 2.2em;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .services h3 {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .services h3 {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .services h3 {
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .services {
+    margin-top: 10vh;
+    padding-top: 10vh;
+  }
+  .services h3 {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  div#services.container {
+
+  }
+  .services h3 {
+    font-size: 1.19em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .services {
+    margin-top: 0;
+    padding-top: 15vh;
+  }
+  
+  .services h3 {
+padding-top: 3vh;
+    position: relative;
+    font-size: 1.3em;
+    max-width: 100%;
+  }
+
+  .services img {
+    width: 65%;
+    margin-right: -25px;
+    position: relative;
+  }
 }
 
 /* calc((0.17 * 100vw * 3568 / 1324 - 30) / 2)
