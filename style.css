@@ -195,6 +195,10 @@ nav ul li a:visited {
   width: 100%;
 }
 
+.disable-scroll {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 650px) {
   .container.t-container {
     padding: 0 25px;
@@ -437,14 +441,15 @@ padding-top: 3vh;
     background-color: #FFD034;
     display: none;
     color: #332A7C;
+  padding-bottom: 10vh;
+}
+
+.discover-more-container h1 {
+  margin-bottom: 2vh;
 }
 
 .discover-more-container.open {
     display: block;
-}
-
-.disable-scroll {
-    overflow: hidden;
 }
 
 .discover-more-container .close {
@@ -453,6 +458,37 @@ padding-top: 3vh;
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: 3em;
+}
+
+.discover-more-container .box1 {
+  padding-top: 10vh;
+  padding-left: calc(100% / 16);
+  width: calc(100% / 16 * 5);
+  max-width: calc(100% / 16 * 5);
+  float: left;
+}
+
+.discover-more-container .box2 {
+  padding-top: 13vh;
+  padding-left: calc(100% / 16 * 5);
+  width: calc(100% / 16 * 10);
+  max-width: calc(100% / 16 * 10);
+  float: left;
+}
+
+.discover-more-container .box3 {
+  padding-left: calc(100% / 16 * 2);
+  width: calc(100% / 16 * 7);
+  max-width: calc(100% / 16 * 7);
+  float: left;
+}
+
+.discover-more-container .box4 {
+  padding-top: 10vh;
+  padding-left: calc(100% / 16 * 2);
+  width: calc(100% / 16 * 8);
+  max-width: calc(100% / 16 * 8);
+  float: left;
 }
 
 @media screen and (max-width: 550px) {
