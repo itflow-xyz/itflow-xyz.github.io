@@ -371,7 +371,7 @@ nav ul li a:visited {
     margin-top: 0;
     padding-top: 15vh;
   }
-  
+
   .services h3 {
 padding-top: 3vh;
     position: relative;
@@ -384,6 +384,87 @@ padding-top: 3vh;
     margin-right: -25px;
     position: relative;
   }
+}
+
+.discover-more {
+  position: relative;
+  text-align: center;
+  padding: 70px 0;
+}
+
+.discover-more span {
+  padding: 61px 20px;
+  background-color: #FFD034;
+  color: #332A7C;
+  font-size: 1em;
+  border-radius: 100px;
+}
+
+.discover-more .ring {
+  height: 142px;
+  width: 142px;
+  z-index: -1;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, calc(-50% + 10px));
+  border-radius: 1000px;
+  border: 1px solid rgba(255, 208, 52, 1);
+  animation-name: ring;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ring {
+  from {
+    width: 142px;
+    height:142px;
+    border-color: rgba(255, 208, 52, 1);
+  }
+  to {
+    width: 170px;
+    height: 170px;
+    border-color: rgba(255, 208, 52, 0);
+  }
+}
+
+.discover-more-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #FFD034;
+    display: none;
+    color: #332A7C;
+}
+
+.discover-more-container.open {
+    display: block;
+}
+
+.disable-scroll {
+    overflow: hidden;
+}
+
+.discover-more-container .close {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3em;
+}
+
+@media screen and (max-width: 550px) {
+    .discover-more {
+         padding: 240px 0;
+    }
+
+    .discover-more-container .close {
+        top: 40px;
+        right: 20px;
+        left: auto;
+    }
 }
 
 /* calc((0.17 * 100vw * 3568 / 1324 - 30) / 2)

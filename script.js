@@ -12,12 +12,15 @@ Document.prototype.ready = function(callback) {
   }
 };
 
+const scrollTop = () => {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+};
+
 let scrolledOnce = false;
 document.ready(() => {
-  document.querySelector("nav img").addEventListener("click", () => {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  });
+  document.querySelector("nav img.d").addEventListener("click", scrollTop);
+  document.querySelector("nav img.m").addEventListener("click", scrollTop);
 
   window.addEventListener("scroll", () => {
     const header = document.querySelector("nav");
@@ -32,6 +35,15 @@ document.ready(() => {
       }
     }
   });
+
+  document.querySelector(".discover-more span").addEventListener("click", () => {
+    document.querySelector(".discover-more-container").classList.add("open");
+    document.querySelector("body").classList.add("disable-scroll");
+  });
+  document.querySelector(".discover-more-container .close").addEventListener("click", () => {
+    document.querySelector(".discover-more-container").classList.remove("open")
+    document.querySelector("body").classList.remove("disable-scroll")
+  })
 });
 
 
