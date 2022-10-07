@@ -125,7 +125,51 @@ window.addEventListener('touchend',function(e){
   gesture.x = []
   gesture.y = []
   gesture.match = xTravel = yTravel = '';
-})
+});
+
+const teamMembers = [
+  {
+    Name: "Giulio Bosco",
+    Img: "img/team-giuliobosco.JPG",
+    Position: "Technical Lead",
+    Scope: "I’m a curious person, always interested in learning and discovering. ",
+  },
+  {
+    Name: "Filippo Finke",
+    Img: "img/team-giuliobosco.JPG",
+    Position: "System Architect and Developer",
+    Scope: "Passionate about cybersecurity, reverse engineering and calisthenics. Always looking for new technologies to learn and put into practice.",
+  }
+];
+
+const teamMember = (n) => {
+  document.querySelector(".team img").setAttribute("src", teamMembers[n].Img);
+  document.querySelectorAll(".team h3").forEach(e => e.classList.add("hide"));
+  document.querySelectorAll(".team .person").forEach(e => e.classList.remove("hide"));
+  document.querySelectorAll(".member").forEach(e => e.classList.remove("active"));
+  document.querySelectorAll(".p" + (n+1)).forEach(e => e.classList.add("active"));
+
+  document.querySelector(".team-member-mobile img.team-profile").setAttribute("src", teamMembers[n].Img);
+  document.querySelector(".team .person h4").textContent = teamMembers[n].Name;
+  document.querySelector(".team-member-mobile h4").textContent = teamMembers[n].Name;
+  document.querySelector(".team .person h5").textContent = teamMembers[n].Position;
+  document.querySelector(".team-member-mobile h5").textContent = teamMembers[n].Position;
+  document.querySelector(".team .person p").textContent = teamMembers[n].Scope;
+  document.querySelector(".team-member-mobile p").textContent = teamMembers[n].Scope;
+
+  document.querySelector(".team-member-mobile").classList.add("open");
+  document.querySelector("body").classList.add("disable-scroll");
+}
+
+const team = () => {
+  document.querySelector(".team img").setAttribute("src", "img/team.png");
+  document.querySelectorAll(".team h3").forEach(e => e.classList.remove("hide"));
+  document.querySelectorAll(".team .person").forEach(e => e.classList.add("hide"));
+  document.querySelectorAll(".member").forEach(e => e.classList.remove("active"));
+
+  document.querySelector(".team-member-mobile").classList.remove("open");
+  document.querySelector("body").classList.remove("disable-scroll");
+}
 
 /*
 //OPEN POPUP

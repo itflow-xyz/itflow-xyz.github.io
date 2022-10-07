@@ -17,6 +17,10 @@
   display: none;
 }
 
+.hide {
+  display: none!important;
+}
+
 @media screen and (max-width: 550px) {
   .d {
     display: none;
@@ -586,6 +590,7 @@ padding-top: 3vh;
 .team {
   position: relative;
   margin-top: 20vh;
+  color: #332A7C;
 }
 
 .team img {
@@ -598,7 +603,22 @@ padding-top: 3vh;
   bottom: 0;
   padding-left: 40%;
   font-size: 2.4em;
-  color: #332A7C;
+}
+
+.team .person {
+  padding-left: 35%;
+}
+
+.team .person h4 {
+  font-size: 2.4em;
+}
+
+.team .person h5 {
+  padding-top: 10px;
+}
+
+.team .person p {
+  padding-top: 20px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -608,31 +628,42 @@ padding-top: 3vh;
 }
 
 @media screen and (max-width: 1250px) {
-  .team h3 {
+  .team h3,
+  .team .person h4 {
     font-size: 1.7em;
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .team h3 {
+  .team h3,
+  .team .person h4  {
     font-size: 1.6em;
   }
 }
 
 @media screen and (max-width: 930px) {
-  .team h3 {
+  .team h3,
+  .team .person h4  {
     font-size: 1.4em;
+  }
+  .team .person p {
+    font-size: .9em;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .team h3 {
+  .team h3,
+  .team .person h4  {
     font-size: 1.2em;
+  }
+  .team .person p {
+    font-size: .8em;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .team h3 {
+  .team h3,
+  .team .person h4  {
     font-size: 1.19em;
   }
 }
@@ -683,7 +714,7 @@ div.highway-slider div.highway-barrier ul.highway-lane li.highway-car {
 }
 
 div.highway-slider div.highway-barrier ul.highway-lane li.highway-car:hover,
-div.highway-slider div.highway-barrier ul.highway-lane li.highway-car:hover.active {
+div.highway-slider div.highway-barrier ul.highway-lane li.highway-car.active {
   color: #332A7C;
 }
 
@@ -805,6 +836,58 @@ ul.highway-lane li.highway-car {
     animation: translateinfinite 45s linear infinite;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .team-member-mobile {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    overflow-y: scroll;
+    color: #332A7C;
+    display: none;
+  }
+
+  .team-member-mobile.open {
+    display: block;
+  }
+
+  .team-member-mobile img.logo {
+    padding-top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 33%;
+    position: relative;
+  }
+
+  .team-member-mobile img.team-profile {
+    padding-top: 5vh;
+    width: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+
+  .team-member-mobile h4 {
+    padding-top: 25px;
+  }
+
+  .team-member-mobile h5 {
+    padding-top: 5px;
+  }
+
+  .team-member-mobile p {
+    padding-top: 25px;
+  }
+
+  .team-member-mobile div {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 3em;
+  }
+}
+
 
 /* calc((0.17 * 100vw * 3568 / 1324 - 30) / 2)
 calc((.17*(100vw - 75px) * .3711 - 30px)/2);*/
