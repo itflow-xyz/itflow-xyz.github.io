@@ -2,6 +2,8 @@
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 });*/
+
+let discoverMoreContainerOpen = false;
 Document.prototype.ready = function(callback) {
   if(callback && typeof callback === 'function') {
     document.addEventListener("DOMContentLoaded", function() {
@@ -37,15 +39,88 @@ document.ready(() => {
   });
 
   document.querySelector(".discover-more span").addEventListener("click", () => {
+    discoverMoreContainerOpen = true;
     document.querySelector(".discover-more-container").classList.add("open");
     document.querySelector("body").classList.add("disable-scroll");
   });
   document.querySelector(".discover-more-container .close").addEventListener("click", () => {
+    discoverMoreContainerOpen = false;
     document.querySelector(".discover-more-container").classList.remove("open")
     document.querySelector("body").classList.remove("disable-scroll")
   })
 });
 
+
+var gesture = {
+    x: [],
+    y: [],
+    match: ''
+  },
+  tolerance = 100,
+  output = document.getElementsByTagName('h1')[0];
+window.addEventListener('touchstart',function(e){
+  if (discoverMoreContainerOpen) {
+    //e.preventDefault()
+    for (i = 0; i < e.touches.length; i++) {
+      var dot = document.createElement('div');
+      dot.id = i
+      dot.style.top = e.touches[i].clientY - 25 + 'px'
+      dot.style.left = e.touches[i].clientX - 25 + 'px'
+      document.body.appendChild(dot)
+      gesture.x.push(e.touches[i].clientX)
+      gesture.y.push(e.touches[i].clientY)
+    }
+  }
+});
+window.addEventListener('touchmove',function(e){
+if (discoverMoreContainerOpen) {
+  //e.preventDefault()
+  for (var i = 0; i < e.touches.length; i++) {
+    var dot = document.getElementById(i);
+    dot.style.top = e.touches[i].clientY - 25 + 'px'
+    dot.style.left = e.touches[i].clientX - 25 + 'px'
+    gesture.x.push(e.touches[i].clientX)
+    gesture.y.push(e.touches[i].clientY)
+  }
+}
+});
+
+let discoverMoreIndex = 0;
+const discoverMore = () => {
+  let x = discoverMoreIndex * 25;
+  setTimeout(() => {
+    document.querySelector(".discover-more-container").style.transform = 'translate(-' + x + '%)';
+  }, 1000);
+  document.querySelector(".discover-more-container").style.animationName = 'discoverMoreHorizontalScroll' + x;
+}
+
+window.addEventListener('touchend',function(e){
+  var dots = document.querySelectorAll('div'),
+    xTravel = gesture.x[gesture.x.length-1] - gesture.x[0],
+    yTravel = gesture.y[gesture.y.length-1] - gesture.y[0];
+  if (yTravel<tolerance && yTravel>-tolerance && xTravel<-tolerance){
+    if (discoverMoreIndex < 3) {
+      discoverMoreIndex++;
+    }
+    discoverMore();
+  }
+  if (yTravel<tolerance && yTravel>-tolerance && xTravel>tolerance){
+    if (discoverMoreIndex > 0) {
+      discoverMoreIndex--;
+    }
+    discoverMore();
+  }
+  gesture.x = []
+  gesture.y = []
+  gesture.match = xTravel = yTravel = ''
+  for (i=0;i<dots.length;i++){
+    dots[i].id = ''
+    dots[i].style.opacity = 0
+    setTimeout(function(){
+      //document.body.removeChild(dots[i])
+    },1000)
+  }
+})
 
 /*
 //OPEN POPUP

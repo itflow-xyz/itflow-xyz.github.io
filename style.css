@@ -491,7 +491,31 @@ padding-top: 3vh;
   float: left;
 }
 
+@media screen and (max-width: 1000px) {
+  .discover-more-container .box1 {
+    width: calc(100% / 16 * 6);
+    max-width: calc(100% / 16 * 6);
+  }
+}
+
 @media screen and (max-width: 550px) {
+
+    @keyframes discoverMoreHorizontalScroll0 {
+      to {transform: translate(0);}
+    }
+
+    @keyframes discoverMoreHorizontalScroll25 {
+      to {transform: translate(-25%);}
+    }
+
+    @keyframes discoverMoreHorizontalScroll50 {
+      to {transform: translate(-50%);}
+    }
+
+    @keyframes discoverMoreHorizontalScroll75  {
+      to {transform: translate(-75%);}
+    }
+
     .discover-more {
          padding: 240px 0;
     }
@@ -500,6 +524,25 @@ padding-top: 3vh;
         top: 40px;
         right: 20px;
         left: auto;
+    }
+
+    .discover-more-container {
+      padding: 75px 0 25px 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      width: 400%;
+      animation-name: discoverMoreHorizontalScroll0;
+      animation-duration: 1s;
+    }
+
+    .discover-more-container .box1,
+    .discover-more-container .box2,
+    .discover-more-container .box3,
+    .discover-more-container .box4 {
+      width: 25%;
+      max-width: 25%;
+      padding: 0 25px;
+
     }
 }
 
