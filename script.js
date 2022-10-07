@@ -19,6 +19,24 @@ const scrollTop = () => {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 };
 
+const openDiscoverMoreContainer = () => {
+  discoverMoreContainerOpen = true;
+  document.querySelector(".discover-more-container").classList.add("open");
+  document.querySelector("body").classList.add("disable-scroll");
+  document.querySelector("ul.dots").classList.add("open");
+  document.querySelector(".discover-more-container-close").classList.add("open");
+}
+
+const closeDiscoverMoreContainer = () => {
+  discoverMoreContainerOpen = false;
+  discoverMoreIndex = 0;
+  discoverMore();
+  document.querySelector(".discover-more-container").classList.remove("open")
+  document.querySelector("body").classList.remove("disable-scroll")
+  document.querySelector("ul.dots").classList.remove("open");
+  document.querySelector(".discover-more-container-close").classList.remove("open");
+}
+
 let scrolledOnce = false;
 document.ready(() => {
   document.querySelector("nav img.d").addEventListener("click", scrollTop);
@@ -38,16 +56,9 @@ document.ready(() => {
     }
   });
 
-  document.querySelector(".discover-more span").addEventListener("click", () => {
-    discoverMoreContainerOpen = true;
-    document.querySelector(".discover-more-container").classList.add("open");
-    document.querySelector("body").classList.add("disable-scroll");
-  });
-  document.querySelector(".discover-more-container .close").addEventListener("click", () => {
-    discoverMoreContainerOpen = false;
-    document.querySelector(".discover-more-container").classList.remove("open")
-    document.querySelector("body").classList.remove("disable-scroll")
-  })
+  document.querySelector(".discover-more span").addEventListener("click", openDiscoverMoreContainer);
+  document.querySelector(".discover-more-container .close").addEventListener("click", closeDiscoverMoreContainer);
+  document.querySelector(".discover-more-container-close").addEventListener("click", closeDiscoverMoreContainer);
 });
 
 
@@ -56,17 +67,11 @@ var gesture = {
     y: [],
     match: ''
   },
-  tolerance = 100,
-  output = document.getElementsByTagName('h1')[0];
+  tolerance = 100;
 window.addEventListener('touchstart',function(e){
   if (discoverMoreContainerOpen) {
     //e.preventDefault()
-    for (i = 0; i < e.touches.length; i++) {
-      var dot = document.createElement('div');
-      dot.id = i
-      dot.style.top = e.touches[i].clientY - 25 + 'px'
-      dot.style.left = e.touches[i].clientX - 25 + 'px'
-      document.body.appendChild(dot)
+    for (let i = 0; i < e.touches.length; i++) {
       gesture.x.push(e.touches[i].clientX)
       gesture.y.push(e.touches[i].clientY)
     }
@@ -75,10 +80,7 @@ window.addEventListener('touchstart',function(e){
 window.addEventListener('touchmove',function(e){
 if (discoverMoreContainerOpen) {
   //e.preventDefault()
-  for (var i = 0; i < e.touches.length; i++) {
-    var dot = document.getElementById(i);
-    dot.style.top = e.touches[i].clientY - 25 + 'px'
-    dot.style.left = e.touches[i].clientX - 25 + 'px'
+  for (let i = 0; i < e.touches.length; i++) {
     gesture.x.push(e.touches[i].clientX)
     gesture.y.push(e.touches[i].clientY)
   }
@@ -87,17 +89,27 @@ if (discoverMoreContainerOpen) {
 
 let discoverMoreIndex = 0;
 const discoverMore = () => {
+  if (!discoverMoreContainerOpen) {
+    return;
+  }
+
   let x = discoverMoreIndex * 25;
+  document.querySelectorAll("ul.dots li").forEach(e => e.classList.remove("active"));
+  document.querySelectorAll("ul.dots li")[discoverMoreIndex].classList.add("active");
   setTimeout(() => {
     document.querySelector(".discover-more-container").style.transform = 'translate(-' + x + '%)';
   }, 1000);
   document.querySelector(".discover-more-container").style.animationName = 'discoverMoreHorizontalScroll' + x;
 }
 
+const setDiscoverMore = (n) => {
+  discoverMoreIndex = n;
+  discoverMore();
+}
+
 window.addEventListener('touchend',function(e){
-  var dots = document.querySelectorAll('div'),
-    xTravel = gesture.x[gesture.x.length-1] - gesture.x[0],
-    yTravel = gesture.y[gesture.y.length-1] - gesture.y[0];
+  let xTravel = gesture.x[gesture.x.length-1] - gesture.x[0];
+  let yTravel = gesture.y[gesture.y.length-1] - gesture.y[0];
   if (yTravel<tolerance && yTravel>-tolerance && xTravel<-tolerance){
     if (discoverMoreIndex < 3) {
       discoverMoreIndex++;
@@ -112,14 +124,7 @@ window.addEventListener('touchend',function(e){
   }
   gesture.x = []
   gesture.y = []
-  gesture.match = xTravel = yTravel = ''
-  for (i=0;i<dots.length;i++){
-    dots[i].id = ''
-    dots[i].style.opacity = 0
-    setTimeout(function(){
-      //document.body.removeChild(dots[i])
-    },1000)
-  }
+  gesture.match = xTravel = yTravel = '';
 })
 
 /*
