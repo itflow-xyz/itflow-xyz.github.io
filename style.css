@@ -583,5 +583,78 @@ padding-top: 3vh;
     }
 }
 
+.team {
+  position: relative;
+  margin-top: 20vh;
+}
+
+.team img {
+  width: 30%;
+  float: left;
+}
+
+.team h3 {
+  position: absolute;
+  bottom: 0;
+  padding-left: 40%;
+  font-size: 2.4em;
+  color: #332A7C;
+}
+
+@media screen and (max-width: 1400px) {
+  .team h3 {
+    font-size: 2.2em;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .team h3 {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .team h3 {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .team h3 {
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .team h3 {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .team h3 {
+    font-size: 1.19em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .team {
+    margin-top: 0;
+  }
+  .team h3 {
+    bottom: auto;
+    position: relative;
+    padding-left: 0;
+    padding-bottom: 10vh;
+  }
+  .team img {
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    float: none;
+    position: absolute;
+  }
+}
+
 /* calc((0.17 * 100vw * 3568 / 1324 - 30) / 2)
 calc((.17*(100vw - 75px) * .3711 - 30px)/2);*/
