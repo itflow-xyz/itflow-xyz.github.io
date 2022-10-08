@@ -1205,18 +1205,106 @@ ul.highway-lane li.highway-car {
 
   .contacts .bubbles {
     width: 80%;
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
-    padding-top: 15vh;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
   }
   .contacts .bubbles .bubble a {
     font-size: 1.1em;
   }
 }
 
-@media screen and (max-width: 382px) {
+footer {
+  width: 100%;
+  background-color: #A6A2C6;
+}
 
+footer {
+  padding: 25px 0 25px 25px;
+  font-size: 1.5em;
+}
+
+footer img {
+  width: 17%;
+  float: left;
+}
+
+footer p {
+  color: #332A7C;
+  padding: 75px 0 75px 15px;
+  float: left;
+}
+
+footer ul {
+  float: right;
+  padding-top: 75px;
+  padding-right: 35px;
+}
+
+footer ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+footer ul li a:link,
+footer ul li a:hover,
+footer ul li a:active,
+footer ul li a:visited {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 976px) {
+  footer {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (max-width: 894px) {
+  footer {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  footer {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  footer p {
+    padding-bottom: 20px;
+  }
+  footer ul {
+    float: left;
+    padding-left: calc(100vw * .17 - 5px);
+    padding-top: 0;
+    padding-bottom: 75px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  footer {
+    position: relative;
+    padding: 25px 0;
+  }
+  footer img {
+    width: 35%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  footer p {
+    padding: 100px 25px 20px 25px;
+  }
+
+  footer ul {
+    padding: 0 10px 75px 10px;
+  }
 }
 
 /* calc((0.17 * 100vw * 3568 / 1324 - 30) / 2)
