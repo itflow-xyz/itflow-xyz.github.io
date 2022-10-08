@@ -165,6 +165,8 @@ const teamMember = (n) => {
 
   document.querySelector(".team-member-mobile").classList.add("open");
   document.querySelector("body").classList.add("disable-scroll");
+
+  document.querySelector("nav").classList.add("d");
 }
 
 const team = () => {
@@ -175,6 +177,7 @@ const team = () => {
 
   document.querySelector(".team-member-mobile").classList.remove("open");
   document.querySelector("body").classList.remove("disable-scroll");
+  document.querySelector("nav").classList.remove("d")
 }
 
 /*
