@@ -1046,5 +1046,178 @@ ul.highway-lane li.highway-car {
   }
 }
 
+.contacts {
+  padding-top: 10vh;
+  color: #332A7C;
+}
+
+.contacts h3 {
+  width: 55%;
+  font-size: 2.4em;
+  float: left;
+}
+
+.contacts .bubbles {
+  width: 45%;  float: left;
+
+}
+
+.contacts .bubbles .bubble {
+  width: 50%;
+  float: left;
+  aspect-ratio: 1;
+  position: relative;
+  color: #332A7C;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.contacts .bubbles .bubble a {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+}
+
+.contacts .bubbles .bubble a:link,
+.contacts .bubbles .bubble a:active,
+.contacts .bubbles .bubble a:visited,
+.contacts .bubbles .bubble a:hover {
+  text-decoration: none;
+  color: #332A7C;
+  font-weight: bolder;
+}
+
+.contacts .bubbles .bubble.instagram {
+  background-image: url("img/bubble-instagram.png");
+}
+
+.contacts .bubbles .bubble.instagram a {
+  top: 50%;
+  left: 45%;
+}
+
+.contacts .bubbles .bubble.email {
+  background-image: url("img/bubble-email.png");
+  background-size: 60%;
+  background-position-x: 10%;
+  background-position-y: 20%;
+}
+
+.contacts .bubbles .bubble.email a {
+  top: 40%;
+  left: 32%;
+}
+
+.contacts .bubbles .bubble.phone {
+  background-image: url("img/bubble-phone.png");
+  background-size: 60%;
+  background-position-x: 65%;
+  background-position-y: 0;
+}
+
+.contacts .bubbles .bubble.phone a {
+  top: 25%;
+  left: 55%;
+}
+
+.contacts .bubbles .bubble.linkedin {
+  background-image: url("img/bubble-linkedin.png");
+  background-size: 70%;
+  background-position-x: 30%;
+  background-position-y: 0;
+}
+
+.contacts .bubbles .bubble.linkedin a {
+  top: 30%;
+  left: 45%;
+}
+
+@media screen and (max-width: 1400px) {
+  .contacts h3 {
+    font-size: 2.2em;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .contacts h3 {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contacts h3 {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .contacts h3 {
+    font-size: 1.4em;
+  }
+
+  .contacts .bubbles .bubble a {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contacts {
+    margin-top: 10vh;
+    padding-top: 10vh;
+  }
+  .contacts h3 {
+    font-size: 1.2em;
+  }
+
+  .contacts .bubbles .bubble a {
+    font-size: .9em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .contacts h3 {
+    font-size: 1.19em;
+  }
+
+  .contacts .bubbles .bubble a {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .contacts {
+    margin-top: 0;
+    padding-top: 10vh;
+    position: relative;
+  }
+
+  .contacts h3 {
+    position: relative;
+    font-size: 1.3em;
+    width: 100%;
+  }
+
+  .services img {
+    width: 65%;
+    margin-right: -25px;
+    position: relative;
+  }
+
+  .contacts .bubbles {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 15vh;
+  }
+  .contacts .bubbles .bubble a {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 382px) {
+
+}
+
 /* calc((0.17 * 100vw * 3568 / 1324 - 30) / 2)
 calc((.17*(100vw - 75px) * .3711 - 30px)/2);*/
