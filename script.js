@@ -139,6 +139,12 @@ const teamMembers = [
     Img: "img/team-giuliobosco.JPG",
     Position: "System Architect and Developer",
     Scope: "Passionate about cybersecurity, reverse engineering and calisthenics. Always looking for new technologies to learn and put into practice.",
+  },
+  {
+    Name: "Luca Di Bello",
+    Img: "img/team-giuliobosco.JPG",
+    Position: "Developer",
+    Scope: "I have been passionate about the world of computer science since I was 6 years old. Much of my knowledge has been self-taught through personal and third party projects."
   }
 ];
 

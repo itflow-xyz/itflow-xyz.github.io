@@ -888,6 +888,163 @@ ul.highway-lane li.highway-car {
   }
 }
 
+.clients {
+  width: 100%;
+  color: #332A7C;
+}
+
+.clients img {
+  width: 40%;
+  float: right;
+}
+
+.clients .clients-logos {
+  width: 60%;
+  padding-right: 5%;
+}
+
+.clients .clients-logos h3 {
+  font-size: 2.4em;
+  padding-bottom: 20px;
+}
+
+.clients .clients-logos a {
+  float: left;
+  width: 50%;
+  aspect-ratio: 202/113;
+  position: relative;
+  padding: 10px;
+}
+
+.clients .clients-logos img {
+  width: calc(100% - 20px);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.clients .clients-logos .cassi {
+  width: 65%;
+  aspect-ratio: 202/60;
+}
+
+.clients .clients-logos .ivansokolov {
+  width: 35%;
+}
+
+.clients .clients-logos .romanmarbles {
+  width: 65%;
+  margin-top: 20px;
+  aspect-ratio: 202/60;
+}
+
+.clients .clients-logos .da {
+  margin-top: 20px;
+  width: 35%;
+}
+
+
+@media screen and (max-width: 1400px) {
+  .clients .clients-logos h3 {
+    font-size: 2.2em;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .clients .clients-logos h3,
+  .team .person h4 {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .clients .clients-logos h3  {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .clients .clients-logos h3 {
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .clients .clients-logos h3 {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .clients .clients-logos h3 {
+    font-size: 1.19em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .clients {
+    margin-top: 0;
+  }
+  .clients h3 {
+    bottom: auto;
+    position: relative;
+    padding: 10vh 0;
+  }
+  .clients img {
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    float: none;
+    position: relative;
+  }
+
+  .clients .clients-logos {
+    width: 100%;
+  }
+
+  .clients .clients-logos a {
+    float: left;
+    width: 100%!important;
+    position: relative;
+    aspect-ratio: auto!important;
+    text-align: center;
+    padding: 2vh 0;
+  }
+
+  .clients .clients-logos img {
+    width: 80%;
+    position: relative;
+    top: auto;
+    transform: none;
+    left: 0;
+  }
+
+  .clients .clients-logos .ivansokolov {
+    width: 60%!important;
+    padding-left: 10%;
+    padding-right: 5%;
+  }
+
+  .clients .clients-logos .ivansokolov img {
+    padding: 2vh 0;
+    width: 100%;
+  }
+
+  .clients .clients-logos .da {
+    padding-top: 3vh;
+    width: 40%!important;
+    padding-left: 5%;
+    padding-right: 10%;
+  }
+
+  .clients .clients-logos .da img {
+    width: 100%;
+  }
+
+  .clients .clients-logos .romanmarbles {
+    padding-top: 0;
+  }
+}
 
 /* calc((0.17 * 100vw * 3568 / 1324 - 30) / 2)
 calc((.17*(100vw - 75px) * .3711 - 30px)/2);*/
