@@ -165,7 +165,7 @@ const teamMember = (n) => {
   document.querySelector(".team-member-mobile p").textContent = teamMembers[n].Scope;
 
   document.querySelector(".team-member-mobile").classList.add("open");
-  document.querySelector("body").classList.add("disable-scroll");
+  document.querySelector("body").classList.add("disable-scroll-mobile");
 
   document.querySelector("nav").classList.add("d");
 }
@@ -177,7 +177,7 @@ const team = () => {
   document.querySelectorAll(".member").forEach(e => e.classList.remove("active"));
 
   document.querySelector(".team-member-mobile").classList.remove("open");
-  document.querySelector("body").classList.remove("disable-scroll");
+  document.querySelector("body").classList.remove("disable-scroll-mobile");
   document.querySelector("nav").classList.remove("d")
 }
 

@@ -263,6 +263,10 @@ nav ul li a:visited {
   overflow: hidden;
 }
 
+.disable-scroll-mobile {
+  overflow: scroll;
+}
+
 @media screen and (max-width: 650px) {
   .container.t-container {
     padding: 0 25px;
@@ -272,6 +276,9 @@ nav ul li a:visited {
 @media screen and (max-width: 550px) {
   .container {
     padding: 0 25px;
+  }
+  .disable-scroll-mobile {
+    overflow: hidden  ;
   }
 }
 
