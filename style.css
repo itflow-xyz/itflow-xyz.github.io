@@ -108,7 +108,6 @@ nav {
   width: 100%;
   padding: 50px 35px 50px 25px;
   position: fixed;
-  background: white;
   z-index: 1;
 }
 
@@ -955,6 +954,7 @@ ul.highway-lane li.highway-car {
 }
 
 .clients {
+  padding-top: 20vh;
   width: 100%;
   color: #332A7C;
 }
@@ -1114,7 +1114,7 @@ ul.highway-lane li.highway-car {
 }
 
 .contacts {
-  padding-top: 10vh;
+  padding-top: 20vh;
   color: #332A7C;
 }
 
