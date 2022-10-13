@@ -4,10 +4,10 @@
 });*/
 
 let discoverMoreContainerOpen = false;
-Document.prototype.ready = function(callback) {
-  if(callback && typeof callback === 'function') {
-    document.addEventListener("DOMContentLoaded", function() {
-      if(document.readyState === "interactive" || document.readyState === "complete") {
+Document.prototype.ready = function (callback) {
+  if (callback && typeof callback === 'function') {
+    document.addEventListener("DOMContentLoaded", function () {
+      if (document.readyState === "interactive" || document.readyState === "complete") {
         return callback();
       }
     });
@@ -39,6 +39,7 @@ const closeDiscoverMoreContainer = () => {
 
 let scrolledOnce = false;
 document.ready(() => {
+  loadCookie();
   document.querySelector("nav img.d").addEventListener("click", scrollTop);
   document.querySelector("nav img.m").addEventListener("click", scrollTop);
 
@@ -68,7 +69,7 @@ var gesture = {
     match: ''
   },
   tolerance = 100;
-window.addEventListener('touchstart',function(e){
+window.addEventListener('touchstart', function (e) {
   if (discoverMoreContainerOpen) {
     //e.preventDefault()
     for (let i = 0; i < e.touches.length; i++) {
@@ -77,14 +78,14 @@ window.addEventListener('touchstart',function(e){
     }
   }
 });
-window.addEventListener('touchmove',function(e){
-if (discoverMoreContainerOpen) {
-  //e.preventDefault()
-  for (let i = 0; i < e.touches.length; i++) {
-    gesture.x.push(e.touches[i].clientX)
-    gesture.y.push(e.touches[i].clientY)
+window.addEventListener('touchmove', function (e) {
+  if (discoverMoreContainerOpen) {
+    //e.preventDefault()
+    for (let i = 0; i < e.touches.length; i++) {
+      gesture.x.push(e.touches[i].clientX)
+      gesture.y.push(e.touches[i].clientY)
+    }
   }
-}
 });
 
 let discoverMoreIndex = 0;
@@ -107,16 +108,16 @@ const setDiscoverMore = (n) => {
   discoverMore();
 }
 
-window.addEventListener('touchend',function(e){
-  let xTravel = gesture.x[gesture.x.length-1] - gesture.x[0];
-  let yTravel = gesture.y[gesture.y.length-1] - gesture.y[0];
-  if (yTravel<tolerance && yTravel>-tolerance && xTravel<-tolerance){
+window.addEventListener('touchend', function (e) {
+  let xTravel = gesture.x[gesture.x.length - 1] - gesture.x[0];
+  let yTravel = gesture.y[gesture.y.length - 1] - gesture.y[0];
+  if (yTravel < tolerance && yTravel > -tolerance && xTravel < -tolerance) {
     if (discoverMoreIndex < 3) {
       discoverMoreIndex++;
     }
     discoverMore();
   }
-  if (yTravel<tolerance && yTravel>-tolerance && xTravel>tolerance){
+  if (yTravel < tolerance && yTravel > -tolerance && xTravel > tolerance) {
     if (discoverMoreIndex > 0) {
       discoverMoreIndex--;
     }
@@ -153,7 +154,7 @@ const teamMember = (n) => {
   document.querySelectorAll(".team h3").forEach(e => e.classList.add("hide"));
   document.querySelectorAll(".team .person").forEach(e => e.classList.remove("hide"));
   document.querySelectorAll(".member").forEach(e => e.classList.remove("active"));
-  document.querySelectorAll(".p" + (n+1)).forEach(e => e.classList.add("active"));
+  document.querySelectorAll(".p" + (n + 1)).forEach(e => e.classList.add("active"));
 
   document.querySelector(".team-member-mobile img.team-profile").setAttribute("src", teamMembers[n].Img);
   document.querySelector(".team .person h4").textContent = teamMembers[n].Name;
@@ -180,62 +181,106 @@ const team = () => {
   document.querySelector("nav").classList.remove("d")
 }
 
-/*
-//OPEN POPUP
-document.querySelector(".circle").addEventListener("click", () => {
-  document.querySelector(".circle").classList.remove("deactive");
-  document.querySelector(".circle p").classList.remove("deactive");
-  document.querySelector(".popup_content").classList.remove("deactive");
-  document.querySelector(".circle").classList.add("active");
-  document.querySelector(".circle p").classList.add("active");
-  document.querySelector(".popup_content").classList.add("active");
-  document.querySelector("body").classList.add("no-scroll");
-});
 
-// CLOSE POPUP
-document
-  .querySelector(".popup_content .popup_close_btn")
-  .addEventListener("click", () => {
-    document.querySelector(".circle").classList.remove("active");
-    document.querySelector(".circle p").classList.remove("active");
-    document.querySelector(".popup_content").classList.remove("active");
-    document.querySelector(".circle").classList.add("deactive");
-    document.querySelector(".circle p").classList.add("deactive");
-    document.querySelector(".popup_content").classList.add("deactive");
-    document.querySelector("body").classList.remove("no-scroll");
-  });
+let googleAnalytics = true;
+let clarity = true;
+let activeCampaign = true;
 
-// HEADER MOBILE
+const clickGoogleAnalytics = () => googleAnalytics = !googleAnalytics;
+const clickClarity = () => clarity = !clarity;
+const clickActiveCampaign = () => activeCampaign = !activeCampaign;
 
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header img");
-  if (window.scrollY >= 50) {
-    header.classList.add("header_mobile");
+const initGoogleAnalytics = async () => {
+  console.log("g")
+}
+
+const initClarity = async () => {
+  console.log("c")
+}
+
+const initActiveCampaign = async () => {
+  console.log("a")
+}
+
+const GOOGLE_ANALYTICS_COOKIE = "googleAnalytics";
+const CLARITY_COOKIE = "clarity";
+const ACTIVE_CAMPAIGN_COOKIE = "activeCampaign";
+
+const policyReject = () => {
+  setCookie(GOOGLE_ANALYTICS_COOKIE, false);
+  setCookie(CLARITY_COOKIE, false);
+  setCookie(ACTIVE_CAMPAIGN_COOKIE, false)
+  document.querySelector(".policy").classList.add("hide");
+}
+
+const policyAccept = () => {
+  document.querySelector(".policy").classList.add("hide");
+  init();
+  setCookie(GOOGLE_ANALYTICS_COOKIE, googleAnalytics);
+  setCookie(CLARITY_COOKIE, clarity);
+  setCookie(ACTIVE_CAMPAIGN_COOKIE, activeCampaign);
+};
+
+const loadCookie = () => {
+  const googleAnalyticsCookie = getCookie(GOOGLE_ANALYTICS_COOKIE);
+  if (googleAnalyticsCookie === "") {
+    return;
+  }
+  document.querySelector(".policy").classList.add("hide");
+
+  googleAnalytics = googleAnalyticsCookie === "true";
+
+  const clarityCookie = getCookie(CLARITY_COOKIE);
+  clarity = clarityCookie === "true";
+
+  const activeCampaignCookie = getCookie(ACTIVE_CAMPAIGN_COOKIE);
+  activeCampaign = activeCampaignCookie === "true";
+  init();
+}
+
+const init = () => {
+  if (googleAnalytics) {
+    initGoogleAnalytics().then();
+  }
+  if (clarity) {
+    initClarity().then();
+  }
+  if (activeCampaign) {
+    initActiveCampaign().then();
+  }
+}
+
+function setCookie(cname, cvalue) {
+  const d = new Date();
+  d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+let showPolicyPersonalize = false;
+
+const policyPersonalize = () => {
+  if (showPolicyPersonalize) {
+    document.querySelector(".policy .policy-personalize").classList.remove("open");
+    showPolicyPersonalize = false;
   } else {
-    header.classList.remove("header_mobile");
+    document.querySelector(".policy .policy-personalize").classList.add("open");
+    showPolicyPersonalize = true;
   }
-});
-
-const member = [
-  {
-    Name: "Giulio Bosco",
-    Img: "img/team-giuliobosco.JPG",
-    Position: "Technical Lead",
-    Scope: "I’m a curious person, always interested in learning and discovering. ",
-  },
-  {
-    Name: "Filippo Finke",
-    Img: "img/itflow-logo.png",
-    Position: "Developer",
-    Scope: "Hello world",
-  }
-]
-
-const teamMember = (memberIndex) => {
-  window.document.querySelector("#team-image").setAttribute("src", member[memberIndex].Img);
-  window.document.querySelector("#team-title").setAttribute("style", "display: none;");
-  window.document.querySelector(".team-member").setAttribute("style", "display: block;");
-  window.document.querySelector("#team-member-name").textContent = member[memberIndex].Name;
-  window.document.querySelector("#team-member-position").textContent = member[memberIndex].Position;
-  window.document.querySelector("#team-member-scope").textContent = member[memberIndex].Scope;
-}*/
+}

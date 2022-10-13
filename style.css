@@ -44,6 +44,65 @@ html {
   padding: 0;
 }
 
+.policy {
+  position: fixed;
+  width: 350px;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 1;
+  padding: 15px;
+  border: 1px #000000 solid;
+  color: #332A7C;
+}
+.policy.hide {
+  display: none;
+}
+
+.policy p a,
+.policy p a:link,
+.policy p a:hover,
+.policy p a:active,
+.policy p a:visited {
+  color: #332A7C;
+}
+
+.policy .policy-personalize {
+  padding-top: 15px;
+  display: none;
+}
+.policy .policy-personalize.open {
+  display: block;
+}
+.policy .policy-personalize div {
+  padding-top: 5px;
+  padding-left: 15px;
+}
+.policy .policy-buttons {
+  text-align: center;
+  padding-top: 15px;
+}
+.policy .policy-button:hover {
+  cursor: pointer;
+}
+.policy .policy-button {
+  border-bottom: 3px solid rgba(51, 42, 124, .48);
+  color: rgba(51, 42, 124, .48);
+}
+.policy .policy-button.reject {
+ float: left;
+}
+.policy .policy-button.accept {
+  float: right;
+  color: #332A7C;
+  border-color: #332A7C;
+}
+
+@media screen and (max-width: 550px) {
+  .policy {
+    width: calc(100%);
+  }
+}
 
 nav {
   width: 100%;
