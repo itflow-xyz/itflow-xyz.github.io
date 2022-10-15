@@ -1,0 +1,90 @@
+.content h1 {
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 23px;
+    margin-bottom: 5px;
+    color: #262626;
+}
+
+.content h1 strong {
+    color: #000000;
+    font-size: 21px;
+}
+
+.content p {
+    margin: 0;
+    line-height: 19px;
+    font-size: 13px;
+    color: #595858;
+    padding-top: 11px;
+}
+
+.content .iub_header {
+    border-bottom: 1px dotted #DFDFDF;
+    padding-bottom: 25px;
+}
+
+.content h2 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    padding-top: 21px;
+    color: #000000;
+}
+
+.content h2 + p {
+    padding-top: 5px;
+}
+
+.content p strong {
+    font-size: 14px;
+    color: #393838;
+}
+
+.content .one_line_col {
+    border-bottom: 1px dotted #DFDFDF;
+}
+
+.legal_pp .one_line_col {
+    padding-bottom: 21px;
+}
+
+.content h3 {
+    color: #262626;
+    margin: 0;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: bold;
+    padding-top: 24px;
+}
+
+.content h4 {
+    color: #505762;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: bold;
+    padding-top: 24px;
+}
+
+.content ul {
+    list-style: disc;
+    padding-top: 5px;
+}
+
+.content ul li {
+    list-style: disc;
+    line-height: 19px;
+    font-size: 13px;
+    margin-left: 30px;
+    margin-top: 2px;
+    color: #595858;
+}
+
+.content a,
+.content ul li a,
+.content a:link,
+.content a:hover,
+.content a:active,
+.content a:visited {
+    color: #595858 !important;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>itflow - privacy policy</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+
+<div class="policy">
+    <h4>notice</h4>
+    <p>
+        We and selected third parties use cookies or similar technologies for technical purposes and, with your consent, for other purposes as specified in the <a href="#">cookie&nbsp;policy</a>. Denying consent may make related features unavailable.<br />
+        You can freely give, deny, or withdraw your consent at any time.<br />
+        Use the “Accept” button to consent to the use of such technologies.
+    </p>
+
+    <div class="policy-personalize">
+        personalize:<br/>
+        <div>
+            <input onclick="clickGoogleAnalytics()" type="checkbox" alt="allow google analytics" title="allow google analytics" checked> allow google analytics<br/>
+            <input onclick="clickClarity()" type="checkbox" alt="allow microssoft clarity" title="allow microsoft clarity" checked> allow  microsoft clarity<br/>
+            <input onclick="clickActiveCampaign()" type="checkbox" alt="allow active campaign" title="allow active campaign" checked> allow active campaign
+        </div>
+    </div>
+
+    <div class="policy-buttons">
+        <a onclick="policyReject()" class="policy-button reject">reject</a>
+        <a onclick="policyPersonalize()" class="policy-button">personalize</a>
+        <a onclick="policyAccept()" class="policy-button accept">accept</a>
+    </div>
+</div>
+
+<nav>
+    <a href="../index.html">
+    <img src="../img/itflow-logo.png" alt="it flow logo" class="m"/>
+    </a>
+    <ul>
+        <li><a href="../index.html#services" title="it flow services">service</a></li>
+        <li><a href="../index.html#team" title="it flow team">team</a></li>
+        <li><a href="../index.html#contacts" title="it flow contact">contact</a></li>
+    </ul>
+    <a href="../index.html">
+    <img src="../img/itflow-logo.png" alt="it flow logo" class="d"/>
+    </a>
+
+    <div class="clearfix"></div>
+</nav>
+
+<div class="nav-space"></div>
+
+<div class="container">
+    <div class="content"></div>
+</div>
+<script>
+  let policy = new XMLHttpRequest();
+  policy.overrideMimeType("application/json");
+  policy.open("GET", "https://www.iubenda.com/api/privacy-policy/21653616/only-legal", true);
+  policy.onreadystatechange = function () {
+    if (policy.readyState === 4 && policy.status === 200) {
+      const json = JSON.parse(policy.responseText);
+      json.content = json.content.replaceAll("//www.iubenda.com/private/privacy-policy/2339006/cookie-policy", "cookie-policy.html")
+      document.querySelector('.content').innerHTML = json.content;
+    }
+  }
+  policy.send(null);
+</script>
+<script src="../script.js"></script>
+<script>
+  Document.prototype.ready = function (callback) {
+    if (callback && typeof callback === 'function') {
+      document.addEventListener("DOMContentLoaded", function () {
+        if (document.readyState === "interactive" || document.readyState === "complete") {
+          return callback();
+        }
+      });
+    }
+  };
+  document.ready(() => {
+    loadCookie();
+    navInit();
+  })
+</script>
+</body>
+</html>
