@@ -1,13 +1,14 @@
-// nav modifier
-const navModifierInit = () => {
-  document.querySelector("nav img.d").addEventListener("click", scrollTop);
-  document.querySelector("nav img.m").addEventListener("click", scrollTop);
-}
+
 // logo scroll top
 const scrollTop = () => {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 };
+// nav modifier
+const navModifierInit = () => {
+  document.querySelector("nav img.d").addEventListener("click", scrollTop);
+  document.querySelector("nav img.m").addEventListener("click", scrollTop);
+}
 
 
 // discover more
