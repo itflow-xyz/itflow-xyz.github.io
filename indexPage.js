@@ -110,19 +110,37 @@ const teamMembers = [
     Name: "Giulio Bosco",
     Img: "img/team-giuliobosco.JPG",
     Position: "Technical Lead",
-    Scope: "I’m a curious person, always interested in learning and discovering. ",
+    Scope: "I’m a curious person, always interested in learning and discovering new things. Since I’ve been a kid I’ve always been interested in technology. A few years back I had the opportunity to start it flow and since there I’m investing all my time developing it flow’s projects.<br/>I do really like to deeply understand companies and organisations, analysing their business, procedures, products and markets. ",
   },
   {
     Name: "Filippo Finke",
-    Img: "img/team-giuliobosco.JPG",
-    Position: "System Architect and Developer",
-    Scope: "Passionate about cybersecurity, reverse engineering and calisthenics. Always looking for new technologies to learn and put into practice.",
+    Img: "img/team-filippofinke.jpg",
+    Position: "System Architect and Software Engineer",
+    Scope: "Passionate about cybersecurity, reverse engineering and calisthenics. Always looking for new technologies to learn and put into practice. Software Developer responsible for creating and maintaining iOS and android apps.",
   },
   {
     Name: "Luca Di Bello",
-    Img: "img/team-giuliobosco.JPG",
+    Img: "img/team-lucadibello.jpg",
+    Position: "Software Engineer",
+    Scope: "Since childhood, I've had a strong interest in technology, which has pushed me to expand my knowledge in the field of software engineering.<br />At it flow, I get to work with a young and dynamic team while using cutting-edge technologies in mobile, web, and software development."
+  },
+  {
+    Name: "Fadil Smajilbasic",
+    Img: "img/team-fadilsmajilbasic.jpg",
     Position: "Developer",
-    Scope: "I have been passionate about the world of computer science since I was 6 years old. Much of my knowledge has been self-taught through personal and third party projects."
+    Scope: "I am 21 years old and I study Computer Science. I have been working parttime as a Full stack developer at itflow since March 2021. I find it a very peaceful working environment that has helped me to increase my professional skills and to learn new technologies and approaches."
+  },
+  {
+    Name: "Simone Bovino",
+    Img: "img/team-simonebovino.jpg",
+    Position: "Developer",
+    Scope: ""
+  },
+  {
+    Name: "Chetan Bardoliya",
+    Img: "img/team-chetanbardoliya.jpg",
+    Position: "Developer",
+    Scope: "Friendly, adaptable, action-oriented. Living in the here-and-now, I am a risk-taker who lives fast-paced lifestyles. Impatient with long explanations. I am a fun loving boy who loves to put a smile on everyone's faces and is fond of travelling to new places. When I am sad I used to see Hollywood sci-fi movies. They magically changed my mood and made me energetic. I am passionate about my work. Because I love what I do, I have a steady source of motivation that drives me to do my best."
   }
 ];
 
@@ -148,7 +166,7 @@ const teamMember = (n) => {
 }
 
 const team = () => {
-  document.querySelector(".team img").setAttribute("src", "img/team.png");
+  document.querySelector(".team img").setAttribute("src", "img/team.jpg");
   document.querySelectorAll(".team h3").forEach(e => e.classList.remove("hide"));
   document.querySelectorAll(".team .person").forEach(e => e.classList.add("hide"));
   document.querySelectorAll(".member").forEach(e => e.classList.remove("active"));
