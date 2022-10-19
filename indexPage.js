@@ -156,8 +156,8 @@ const teamMember = (n) => {
   document.querySelector(".team-member-mobile h4").textContent = teamMembers[n].Name;
   document.querySelector(".team .person h5").textContent = teamMembers[n].Position;
   document.querySelector(".team-member-mobile h5").textContent = teamMembers[n].Position;
-  document.querySelector(".team .person p").textContent = teamMembers[n].Scope;
-  document.querySelector(".team-member-mobile p").textContent = teamMembers[n].Scope;
+  document.querySelector(".team .person p"). innerHTML = teamMembers[n].Scope;
+  document.querySelector(".team-member-mobile p").innerHTML = teamMembers[n].Scope;
 
   document.querySelector(".team-member-mobile").classList.add("open");
   document.querySelector("body").classList.add("disable-scroll-mobile");
