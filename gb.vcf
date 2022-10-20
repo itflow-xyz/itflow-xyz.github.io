@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iPhone OS 16.0//EN
+N:Bosco;Giulio;;;
+FN:Giulio Bosco
+ORG:it flow;
+EMAIL;type=INTERNET;type=pref:giulio.bosco@itflow.xyz
+TEL;type=CELL;type=VOICE;type=pref:+41795182216
+item1.URL;type=pref:https://itflow.xyz
+item1.X-ABLabel:_$!<Other>!$_
+END:VCARD
