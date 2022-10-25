@@ -32,10 +32,12 @@ const navInit = () => {
 let googleAnalytics = true;
 let clarity = true;
 let activeCampaign = true;
+let tagManager = true;
 
 const clickGoogleAnalytics = () => googleAnalytics = !googleAnalytics;
 const clickClarity = () => clarity = !clarity;
 const clickActiveCampaign = () => activeCampaign = !activeCampaign;
+const clickTagManager = () => tagManager = !tagManager;
 
 const initGoogleAnalytics = async () => {
   console.log("g")
@@ -59,14 +61,24 @@ const initActiveCampaign = async () => {
   console.log("a")
 }
 
+const initTagManager = async () => {
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PHQGN8D');
+}
+
 const GOOGLE_ANALYTICS_COOKIE = "googleAnalytics";
 const CLARITY_COOKIE = "clarity";
 const ACTIVE_CAMPAIGN_COOKIE = "activeCampaign";
+const GOOGLE_TAG_MANAGER_COOKIE = "googletagManager";
 
 const policyReject = () => {
   setCookie(GOOGLE_ANALYTICS_COOKIE, false);
   setCookie(CLARITY_COOKIE, false);
-  setCookie(ACTIVE_CAMPAIGN_COOKIE, false)
+  setCookie(ACTIVE_CAMPAIGN_COOKIE, false);
+  setCookie(GOOGLE_TAG_MANAGER_COOKIE, false);
   document.querySelector(".policy").classList.add("hide");
 }
 
@@ -76,22 +88,24 @@ const policyAccept = () => {
   setCookie(GOOGLE_ANALYTICS_COOKIE, googleAnalytics);
   setCookie(CLARITY_COOKIE, clarity);
   setCookie(ACTIVE_CAMPAIGN_COOKIE, activeCampaign);
+  setCookie(GOOGLE_TAG_MANAGER_COOKIE, tagManager);
 };
 
 const loadCookie = () => {
   const googleAnalyticsCookie = getCookie(GOOGLE_ANALYTICS_COOKIE);
-  if (googleAnalyticsCookie === "") {
+  const clarityCookie = getCookie(CLARITY_COOKIE);
+  const activeCampaignCookie = getCookie(ACTIVE_CAMPAIGN_COOKIE);
+  const googleTagManager = getCookie(GOOGLE_TAG_MANAGER_COOKIE);
+  if (googleAnalyticsCookie === "" || clarityCookie === "" || activeCampaignCookie === "" || googleTagManager === "") {
     return;
   }
   document.querySelector(".policy").classList.add("hide");
 
   googleAnalytics = googleAnalyticsCookie === "true";
-
-  const clarityCookie = getCookie(CLARITY_COOKIE);
   clarity = clarityCookie === "true";
-
-  const activeCampaignCookie = getCookie(ACTIVE_CAMPAIGN_COOKIE);
   activeCampaign = activeCampaignCookie === "true";
+  tagManager = googleAnalyticsCookie === "true";
+
   init();
 }
 
@@ -104,6 +118,9 @@ const init = () => {
   }
   if (activeCampaign) {
     initActiveCampaign().then();
+  }
+  if (tagManager) {
+    initTagManager().then();
   }
 }
 
