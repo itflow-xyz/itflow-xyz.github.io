@@ -135,12 +135,6 @@ const teamMembers = [
     Img: "img/team-simonebovino.jpg",
     Position: "Developer",
     Scope: ""
-  },
-  {
-    Name: "Chetan Bardoliya",
-    Img: "img/team-chetanbardoliya.jpg",
-    Position: "Developer",
-    Scope: "Friendly, adaptable, action-oriented. Living in the here-and-now, I am a risk-taker who lives fast-paced lifestyles. Impatient with long explanations. I am a fun loving boy who loves to put a smile on everyone's faces and is fond of travelling to new places. When I am sad I used to see Hollywood sci-fi movies. They magically changed my mood and made me energetic. I am passionate about my work. Because I love what I do, I have a steady source of motivation that drives me to do my best."
   }
 ];
 
