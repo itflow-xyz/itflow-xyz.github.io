@@ -487,6 +487,7 @@ padding-top: 3vh;
   animation-name: ring;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+  cursor: pointer;
 }
 
 @keyframes ring {
