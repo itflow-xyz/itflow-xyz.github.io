@@ -465,6 +465,7 @@ padding-top: 3vh;
   position: relative;
   text-align: center;
   padding: 70px 0;
+  cursor: pointer;
 }
 
 .discover-more span {
@@ -603,6 +604,7 @@ padding-top: 3vh;
       width: 100%;
       color: #332A7C;
       display: none;
+      cursor: pointer;
     }
     .discover-more-container-close.open {
       display: block;
@@ -961,6 +963,59 @@ ul.highway-lane li.highway-car {
   }
 }
 
+.snapsite {
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+
+.snapsite img {
+  padding-top: 10vh;
+  width: 40%;
+  float: right;
+}
+
+.snapsite-description {
+  width: 55%;
+}
+
+.snapsite h3 {
+  font-size: 1.6em;
+  color: #332A7C;
+}
+
+.snapsite p {
+  font-size: 1.4em;
+  color: #332A7C;
+}
+
+.snapsite a, .snapsite a:link, .snapsite a, .snapsite a:active, .snapsite a:visited {
+  text-decoration: none;
+  color: #332A7C;
+}
+
+.snapsite a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 800px) {
+  .snapsite {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
+  .snapsite img {
+    padding-top: 0;
+    padding-bottom: 5vh;
+    width: 50%;
+    float: none;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .snapsite-description {
+    width: 100%;
+  }
+}
+
 .clients {
   padding-top: 20vh;
   width: 100%;
@@ -969,12 +1024,12 @@ ul.highway-lane li.highway-car {
 
 .clients img {
   width: 40%;
-  float: right;
 }
 
 .clients .clients-logos {
   width: 60%;
-  padding-right: 5%;
+  padding-left: 5%;
+  float: right;
 }
 
 .clients .clients-logos h3 {
@@ -1044,6 +1099,10 @@ ul.highway-lane li.highway-car {
 }
 
 @media screen and (max-width: 800px) {
+  .clients {
+    margin-top: 10vh;
+    padding-top: 10vh;
+  }
   .clients .clients-logos h3 {
     font-size: 1.2em;
   }
